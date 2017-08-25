@@ -1,6 +1,6 @@
 import React from 'react';
 import NavigationBar from './NavigationBar';
-import '../assets/stylesheets/HomePage.scss';
+import '../assets/stylesheets/components/HomePage.scss';
 
 class HomePage extends React.Component {
   render() {
