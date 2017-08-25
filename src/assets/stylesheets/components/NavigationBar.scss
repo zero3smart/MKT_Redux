@@ -20,7 +20,7 @@
 .navbar {
   margin-left: 42px;
   margin-top: 37px;
-  background-color: #fff;
+  background-color: $white-bg;
 }
 
 .Line {
@@ -42,7 +42,7 @@
   }
 
   &:active, &:visited, &:focus {
-    color: #000 !important;
+    color: $black-bg !important;
   }
 
   span.separator {
@@ -50,6 +50,15 @@
     padding: 0;
     padding-right: 10px;
   }
+}
+
+.navbar-collapse {
+  width: 44% !important;
+}
+
+.Bitmap {
+  width: 39px;
+  height: 39px;
 }
 
 /* Header End */

@@ -1,10 +1,11 @@
 import React from 'react';
 import '../assets/stylesheets/components/NavigationBar.scss';
+import avatar from '../assets/images/character.png';
 
 class NavigationBar extends React.Component {
   render() {
     return (
-      <div>
+      <div className="">
         <div className="Line">
         </div>
         <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
@@ -31,13 +32,18 @@ class NavigationBar extends React.Component {
             <ul className="nav navbar-nav">
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Hi, Alexandra
+                  Hi, <b>Alexandra</b>
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a className="dropdown-item" href="#">Action</a>
                   <a className="dropdown-item" href="#">Another action</a>
                   <a className="dropdown-item" href="#">Something else here</a>
                 </div>
+              </li>
+              <li>
+                <a href="#" className="Bitmap">
+                  <img src={avatar} alt="avatar" />
+                </a>
               </li>
             </ul>
           </div>
