@@ -1,6 +1,7 @@
 import React from 'react';
 import '../assets/stylesheets/components/NavigationBar.scss';
 import avatar from '../assets/images/character.png';
+import { Link, IndexLink } from 'react-router';
 
 class NavigationBar extends React.Component {
   render() {
@@ -20,13 +21,19 @@ class NavigationBar extends React.Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a className="nav-link" href="#"><span className="separator">Explorer</span> <span className="sr-only">(current)</span></a>
+                <IndexLink to="/explore" activeClassName="active" className="nav-link">
+                  <span className="separator">Explorer</span> <span className="sr-only">(current)</span>
+                </IndexLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#"><span className="separator">About</span></a>
+                <IndexLink to="/about" activeClassName="active" className="nav-link">
+                  <span className="separator">About</span>
+                </IndexLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">How does this work</a>
+                <IndexLink to="/help" activeClassName="active" className="nav-link">
+                  <span className="separator">How does this work</span>
+                </IndexLink>
               </li>
             </ul>
             <ul className="nav navbar-nav">
