@@ -31,7 +31,6 @@ export function fetchMarkets() {
         return;
       }
       response.json().then(data => {
-        console.log(data);
         dispatch(setMarkets(data.markets));
       });
     });
