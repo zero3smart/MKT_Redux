@@ -24,9 +24,17 @@
 }
 
 .Line {
-  width: 1313px;
+  width: 1183px;
   height: 3px;
   border: solid 5px #4990e2;
+}
+
+.nav-item {
+  &:last-child {
+    span.separator {
+      border-right: none;
+    }
+  }
 }
 
 .nav-link {
@@ -50,6 +58,8 @@
     padding: 0;
     padding-right: 10px;
   }
+
+
 }
 
 .navbar-collapse {
