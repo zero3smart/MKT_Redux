@@ -1,0 +1,1 @@
+export const SET_MARKETS = 'SET_MARKETS';

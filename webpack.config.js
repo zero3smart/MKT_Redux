@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-sourcemap',
@@ -14,7 +14,6 @@ module.exports = {
   devServer: {
     hot: true,
     inline: true,
-    port: 8080,
     historyApiFallback: true
   },
   plugins: [
