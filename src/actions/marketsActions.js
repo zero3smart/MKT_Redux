@@ -11,33 +11,14 @@ export function setMarkets(markets) {
 export function fetchMarkets() {
   return dispatch => {
     return axios.get('https://mkt-stag.herokuapp.com/api/markets').then(res => {
-      debugger;
       if (res.status !== 200) {
         console.log(`There was a problem: ${res.status}`);
         return;
       }
-      console.log(res);
-    });
-    /*fetch('https://mkt-stag.herokuapp.com/api/markets', {
-      mode: 'no-cors',
-      headers: {
-        'Accept': 'application/json',
-        "Content-Type": "application/json; charset=utf-8",
-        'Access-Control-Allow-Origin': '*'
-      }
-    })
-    .then(res => {
-      if (res.status !== 200) {
-        console.log(`There was a problem: ${res.status}`);
-        return;
-      }
+      dispatch(setMarkets(res.data.markets));
+    }, err => {
 
-      console.log(res);
-      return res.json();
-    }).then(data => {
-      console.log(data);
-      dispatch(setMarkets(data.markets))
-    });*/
+    });
 
     // fetch("src/data/data.json")
     // .then(response => {
