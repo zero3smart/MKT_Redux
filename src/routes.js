@@ -14,6 +14,6 @@ export default (
     <Route path="/explore" component={ExplorePage} />
     <Route path="/about" component={AboutPage} />
     <Route path="/help" component={HelpPage} />
-    <Route path="/market-detail" component={MarketDetailPage} />
+    <Route path="/market-detail/:slug" component={MarketDetailPage} />
   </Route>
 )
