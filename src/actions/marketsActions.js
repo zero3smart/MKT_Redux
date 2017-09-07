@@ -14,6 +14,7 @@ export function setCompanies(companies) {
     companies
   };
 }
+
 export function fetchMarkets() {
   return dispatch => {
     return axios.get(process.env.API_URL + '/api/markets').then(res => {
