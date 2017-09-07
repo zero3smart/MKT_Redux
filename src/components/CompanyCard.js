@@ -1,13 +1,13 @@
 import React from 'react';
 
-class CompanyCard extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Company Card</h1>
-      </div>
-    );
-  }
+export default function CompanyCard({ company }) {
+  return (
+    <div>
+      {company.name}
+    </div>
+  );
 }
 
-export default CompanyCard;
+CompanyCard.propTypes = {
+  company: React.PropTypes.object.isRequired
+}

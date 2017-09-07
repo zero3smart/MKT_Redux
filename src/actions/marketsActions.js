@@ -1,4 +1,4 @@
-import { SET_MARKETS } from './types';
+import { SET_MARKETS, SET_COMPANIES } from './types';
 import axios from 'axios';
 
 export function setMarkets(markets) {
@@ -8,6 +8,12 @@ export function setMarkets(markets) {
   };
 }
 
+export function setCompanies(companies) {
+  return {
+    type: SET_COMPANIES,
+    companies
+  };
+}
 export function fetchMarkets() {
   return dispatch => {
     return axios.get(process.env.API_URL + '/api/markets').then(res => {
@@ -33,6 +39,17 @@ export function fetchMarkets() {
   }
 }
 
-export function fetchCompanies() {
+export function fetchCompanies(url) {
+  return dispatch => {
+    debugger;
+    return axios.get(url).then(res => {
+      if (res.status !== 200) {
+        console.log(`There was a problem: ${res.status}`);
+        return;
+      }
+      dispatch(setCompanies(res.data.companies));
+    }, err => {
 
+    });
+  }
 }
