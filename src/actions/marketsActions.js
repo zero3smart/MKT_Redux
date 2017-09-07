@@ -10,7 +10,7 @@ export function setMarkets(markets) {
 
 export function fetchMarkets() {
   return dispatch => {
-    return axios.get('https://mkt-stag.herokuapp.com/api/markets').then(res => {
+    return axios.get(process.env.API_URL + '/api/markets').then(res => {
       if (res.status !== 200) {
         console.log(`There was a problem: ${res.status}`);
         return;
@@ -31,4 +31,8 @@ export function fetchMarkets() {
     //   });
     // });
   }
+}
+
+export function fetchCompanies() {
+
 }

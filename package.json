@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "server": "webpack-dev-server",
+    "server": "webpack-dev-server --env .env --watch --colors",
     "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
@@ -17,6 +17,8 @@
     "classnames": "2.2.5",
     "d3": "^4.10.0",
     "d3-geo": "^1.6.4",
+    "dotenv": "^4.0.0",
+    "fs": "0.0.1-security",
     "jsonwebtoken": "7.4.3",
     "lodash": "4.17.4",
     "path": "0.12.7",
@@ -38,6 +40,7 @@
     "bootstrap-sass": "3.3.7",
     "css-loader": "0.28.5",
     "dsv-loader": "2.0.0",
+    "env-cmd": "^5.1.0",
     "extract-loader": "1.0.1",
     "file-loader": "0.11.2",
     "html-webpack-plugin": "2.30.1",

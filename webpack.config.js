@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const dotenv = require('dotenv').config();
 
 module.exports = {
   devtool: 'inline-sourcemap',
@@ -33,6 +34,11 @@ module.exports = {
       jQuery: 'jquery',
       $: 'jquery',
       jquery: 'jquery'
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        API_URL: JSON.stringify(process.env.API_URL)
+      }
     })
   ],
   module: {
@@ -94,6 +100,7 @@ module.exports = {
   },
   node: {
     net: 'empty',
-    dns: 'empty'
+    dns: 'empty',
+    fs: 'empty'
   }
 }
