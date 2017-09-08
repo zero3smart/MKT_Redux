@@ -16,6 +16,7 @@ export function setCompanies(companies) {
 }
 
 export function fetchMarkets() {
+  debugger;
   return dispatch => {
     return axios.get(process.env.API_URL + '/api/markets').then(res => {
       if (res.status !== 200) {
@@ -42,7 +43,6 @@ export function fetchMarkets() {
 
 export function fetchCompanies(url) {
   return dispatch => {
-    debugger;
     return axios.get(url).then(res => {
       if (res.status !== 200) {
         console.log(`There was a problem: ${res.status}`);

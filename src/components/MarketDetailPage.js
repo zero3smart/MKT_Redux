@@ -2,7 +2,8 @@ import React from 'react';
 import { IndexLink } from 'react-router';
 import { connect } from 'react-redux';
 import CompanyCard from './CompanyCard';
-import { fetchCompanies } from '../actions/marketsActions';
+import bluebird from 'bluebird';
+import { fetchCompanies, fetchMarkets } from '../actions/marketsActions';
 
 class MarketDetailPage extends React.Component {
   constructor(props) {
@@ -10,7 +11,16 @@ class MarketDetailPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCompanies(this.props.market.url);
+    const promise = new Promise((resolve, reject) => {
+      resolve(this.props.fetchMarkets());
+    });
+
+    promise.then((res) => {
+      const market = this.props.markets.find(item => item.slug === this.props.params.slug);
+      this.props.fetchCompanies(market.url);
+    }, err => {
+
+    });
   }
 
   render() {
@@ -36,17 +46,19 @@ class MarketDetailPage extends React.Component {
 }
 
 MarketDetailPage.propTypes = {
-  market: React.PropTypes.array.isRequired,
+  // market: React.PropTypes.object.isRequired,
+  markets: React.PropTypes.array.isRequired,
   companies: React.PropTypes.array.isRequired
 }
 
 function mapStateToProps(state, props) {
   if (props.params.slug) {
     return {
-      market: state.markets.find(item => item.slug === props.params.slug),
+      markets: state.markets,
+      // market: state.markets.find(item => item.slug === props.params.slug),
       companies: state.companies
     };
   }
 }
 
-export default connect(mapStateToProps, { fetchCompanies })(MarketDetailPage);
+export default connect(mapStateToProps, { fetchCompanies, fetchMarkets })(MarketDetailPage);
