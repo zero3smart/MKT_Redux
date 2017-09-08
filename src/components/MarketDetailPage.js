@@ -3,11 +3,15 @@ import { IndexLink } from 'react-router';
 import { connect } from 'react-redux';
 import CompanyCard from './CompanyCard';
 import bluebird from 'bluebird';
+import classnames from 'classnames';
 import { fetchCompanies, fetchMarkets } from '../actions/marketsActions';
 
 class MarketDetailPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    }
   }
 
   componentDidMount() {
@@ -17,7 +21,11 @@ class MarketDetailPage extends React.Component {
 
     promise.then((res) => {
       const market = this.props.markets.find(item => item.slug === this.props.params.slug);
-      this.props.fetchCompanies(market.url);
+      this.props.fetchCompanies(market.url).then(res => {
+        this.setState({loading: false});
+      }, err => {
+
+      });
     }, err => {
 
     });
@@ -27,7 +35,7 @@ class MarketDetailPage extends React.Component {
     const { companies } = this.props;
 
     const companiesList = (
-      <div className="">
+      <div>
         { companies.map(company => <CompanyCard key={company.id} company={company} />) }
       </div>
     );
@@ -37,7 +45,7 @@ class MarketDetailPage extends React.Component {
     );
 
     return (
-      <div>
+      <div className={classnames('ui', {loading: this.state.loading}, 'segment')}>
         <IndexLink to='/explore' activeClassName="active" className="btn btn-primary">back to list</IndexLink>
         {companies.length === 0 ? emptyMessage : companiesList}
       </div>
