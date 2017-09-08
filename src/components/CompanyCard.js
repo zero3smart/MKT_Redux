@@ -6,11 +6,12 @@ class CompanyCard extends React.Component {
   }
 
   render() {
+    const { company } = this.props;
     return (
       <div className="ui items segment">
         <div className="item">
           <div className="image">
-            <img src="/images/wireframe/image.png" />
+            <img src={company.imageSrc} alt="Company Logo" />
           </div>
           <div className="content">
             <a className="header">Header</a>
