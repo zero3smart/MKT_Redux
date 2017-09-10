@@ -21,9 +21,6 @@ class CompanyCard extends React.Component {
             <div className="meta">
               <span>{company.description}</span>
             </div>
-            <div className="description">
-              <p></p>
-            </div>
             <div className="extra">
               <div className="ui label">
                 <i className="fa fa-flag" aria-hidden="true"></i>
