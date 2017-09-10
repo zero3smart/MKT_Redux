@@ -8,6 +8,7 @@ class CompanyCard extends React.Component {
 
   render() {
     const { company } = this.props;
+    let website = company.website.substring(8);
     return (
       <div className="ui items segment">
         <div className="item">
@@ -16,7 +17,7 @@ class CompanyCard extends React.Component {
           </div>
           <div className="content">
             <a className="header">{company.name}</a>
-            <p>{company.website}</p>
+            <p>{website}</p>
             <div className="meta">
               <span>{company.description}</span>
             </div>
