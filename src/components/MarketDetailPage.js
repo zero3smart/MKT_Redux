@@ -24,7 +24,8 @@ class MarketDetailPage extends React.Component {
       this.props.fetchCompanies(market.url).then(res => {
         this.setState({loading: false});
       }, err => {
-
+        console.log(err);
+        this.setState({loading: false});
       });
     }, err => {
 

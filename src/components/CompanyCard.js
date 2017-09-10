@@ -9,6 +9,34 @@ class CompanyCard extends React.Component {
   render() {
     const { company } = this.props;
     let website = company.website.substring(8);
+
+    let city, stateCode, countryCode, employees;
+
+    if (company && company.geo !== undefined && company.geo !== null) {
+      city = company.geo.city;
+    } else {
+      city = '';
+    }
+
+    if (company && company.geo !== undefined && company.geo !== null) {
+      stateCode = company.geo.stateCode;
+    } else {
+      stateCode = '';
+    }
+
+    if (company && company.geo !== undefined && company.geo !== null) {
+      countryCode = company.geo.countryCode;
+    } else {
+      countryCode = '';
+    }
+
+    if (company && company.metrics !== undefined && company.metrics !== null) {
+      employees = company.metrics.employees;
+    } else {
+      employees = '';
+    }
+
+
     return (
       <div className="ui items segment">
         <div className="item">
@@ -24,7 +52,7 @@ class CompanyCard extends React.Component {
             <div className="extra">
               <div className="ui label">
                 <i className="fa fa-flag" aria-hidden="true"></i>
-                <p>{company.geo.city}<br />{company.geo.stateCode},{company.geo.countryCode}</p>
+                <p>{city}<br />{stateCode},{countryCode}</p>
               </div>
               <div className="ui label">
                 <i className="fa fa-star" aria-hidden="true"></i>
@@ -32,7 +60,7 @@ class CompanyCard extends React.Component {
               </div>
               <div className="ui label">
                 <i className="fa fa-users" aria-hidden="true"></i>
-                <p>{company.metrics.employees}<br />employees</p>
+                <p>{employees}<br />employees</p>
               </div>
               <div className="ui label">
                 <img src={company.addedToMarketBy.imageSrc} alt="Avatar" width="20" />
