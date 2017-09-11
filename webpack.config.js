@@ -40,6 +40,12 @@ module.exports = {
       'process.env': {
         API_URL: JSON.stringify(process.env.API_URL)
       }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      compress: {
+        warnings: false
+      }
     })
   ],
   module: {
