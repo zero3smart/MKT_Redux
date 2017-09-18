@@ -1,4 +1,4 @@
-import { SET_MARKETS, SET_COMPANIES } from './types';
+import { SET_MARKETS, SET_COMPANIES, SET_STATES } from './types';
 import axios from 'axios';
 
 export function setMarkets(markets) {
@@ -12,6 +12,13 @@ export function setCompanies(companies) {
   return {
     type: SET_COMPANIES,
     companies
+  };
+}
+
+export function setStates(states) {
+  return {
+    type: SET_STATES,
+    states
   };
 }
 
@@ -48,6 +55,20 @@ export function fetchCompanies(url) {
         return;
       }
       dispatch(setCompanies(res.data.companies));
+    }, err => {
+
+    });
+  }
+}
+
+export function fetchStates() {
+  return dispatch => {
+    return axios.get(process.env.API_URL + '/api/markets/clojure-companies.json?layout=map').then(res => {
+      if (res.status !== 200) {
+        console.log(`There was a problem: ${res.status}`);
+        return;
+      }
+      dispatch(setStates(res.data.usStates));
     }, err => {
 
     });

@@ -11,8 +11,8 @@
          "url":"https://mkt-stag.herokuapp.com/api/markets/genetic-testing-for-hereditary-conditions.json",
          "featuredStats":{
             "companies":43,
-            "comments":66,
-            "contributors":24
+            "comments":86,
+            "contributors":44
          },
          "featuredCompanies":[
             {
@@ -90,8 +90,8 @@
          "url":"https://mkt-stag.herokuapp.com/api/markets/top-artificial-intelligence-companies-in-healthcare-to-keep-an-eye-on.json",
          "featuredStats":{
             "companies":30,
-            "comments":20,
-            "contributors":0
+            "comments":33,
+            "contributors":10
          },
          "featuredCompanies":[
             {
@@ -169,8 +169,8 @@
          "url":"https://mkt-stag.herokuapp.com/api/markets/20-machine-learning-and-ai-startups-in-india-running-the-ai-race-2017-make-me-analyst.json",
          "featuredStats":{
             "companies":21,
-            "comments":63,
-            "contributors":41
+            "comments":13,
+            "contributors":16
          },
          "featuredCompanies":[
             {
@@ -248,8 +248,8 @@
          "url":"https://mkt-stag.herokuapp.com/api/markets/clojure-companies.json",
          "featuredStats":{
             "companies":157,
-            "comments":60,
-            "contributors":27
+            "comments":24,
+            "contributors":5
          },
          "featuredCompanies":[
             {

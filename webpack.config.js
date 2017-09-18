@@ -16,7 +16,8 @@ module.exports = {
   devServer: {
     hot: true,
     inline: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    contentBase: path.join(__dirname, '/src/assets')
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
