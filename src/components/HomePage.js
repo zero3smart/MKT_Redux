@@ -85,7 +85,9 @@ class HomePage extends React.Component {
       </div>
     );
 
-    const { states } = this.props;
+    const { states, companies } = this.props;
+
+
 
     return (
       <div className="">
@@ -162,12 +164,14 @@ class HomePage extends React.Component {
 
 HomePage.propTypes = {
   states: React.PropTypes.array.isRequired,
+  companies: React.PropTypes.array.isRequired,
   fetchStates: React.PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {
   return {
-    states: state.states
+    states: state.states,
+    companies: state.companies
   }
 }
 

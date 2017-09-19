@@ -14,19 +14,11 @@ class CompanyCard extends React.Component {
 
     if (company && company.geo !== undefined && company.geo !== null) {
       city = company.geo.city;
-    } else {
-      city = '';
-    }
-
-    if (company && company.geo !== undefined && company.geo !== null) {
       stateCode = company.geo.stateCode;
-    } else {
-      stateCode = '';
-    }
-
-    if (company && company.geo !== undefined && company.geo !== null) {
       countryCode = company.geo.countryCode;
     } else {
+      city = '';
+      stateCode = '';
       countryCode = '';
     }
 

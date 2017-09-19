@@ -69,6 +69,7 @@ export function fetchStates() {
         return;
       }
       dispatch(setStates(res.data.usStates));
+      dispatch(setCompanies(res.data.companies));
     }, err => {
 
     });
