@@ -17,7 +17,10 @@ module.exports = {
     hot: true,
     inline: true,
     historyApiFallback: true,
-    contentBase: path.join(__dirname, '/src/assets')
+    contentBase: [
+      path.join(__dirname, '/src/assets'),
+      path.join(__dirname, '/src/components')
+    ]
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
