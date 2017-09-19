@@ -87,7 +87,20 @@ class HomePage extends React.Component {
 
     const { states, companies } = this.props;
 
+    let images = [];
 
+    images = companies.map(company => {
+      if (company && company.geo !== undefined && company.geo !== null) {
+        return {
+          "zoomLevel": 5,
+          "scale": 0.5,
+          "title": company.geo.city,
+          "latitude": company.geo.lat,
+          "longitude": company.geo.lng
+        }
+      }
+      return {};
+    });
 
     return (
       <div className="">
@@ -113,21 +126,7 @@ class HomePage extends React.Component {
             "dataProvider": {
               "map": "usaLow",
               "areas": states,
-              "images": [ {
-                  "zoomLevel": 5,
-                  "scale": 0.5,
-                  "title": "Brussels",
-                  "latitude": 42.2830786,
-                  "longitude": -87.9531303
-                },{
-                  "zoomLevel": 5,
-                  "scale": 0.5,
-                  "title": "London",
-                  "latitude": 41.8894661,
-                  "longitude": -87.6288622,
-                  "url": "http://www.google.co.uk"
-                }
-              ]
+              "images": images
             },
             "listeners": [
               {

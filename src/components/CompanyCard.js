@@ -28,7 +28,6 @@ class CompanyCard extends React.Component {
       employees = '';
     }
 
-
     return (
       <div className="ui items segment">
         <div className="item">
