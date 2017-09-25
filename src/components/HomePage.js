@@ -84,6 +84,7 @@ class HomePage extends React.Component {
     const { states, companies } = this.props;
 
     let images = [];
+    let notAddressCompanies = [];
 
     images = companies.map(company => {
       if (company && company.geo !== undefined && company.geo !== null) {
@@ -98,10 +99,22 @@ class HomePage extends React.Component {
             "longitude": company.geo.lng,
             "imageSrc": company.imageSrc
           }
+        } else {
+          notAddressCompanies.push(company);
         }
       }
       return {};
     });
+
+    console.log(notAddressCompanies);
+
+    const notAddressCompaniesList = (
+      <div>
+        {notAddressCompanies.map(comapny => (
+          <p>{company.name}</p>
+        ))}
+      </div>
+    );
 
     return (
       <div className="">
@@ -156,7 +169,9 @@ class HomePage extends React.Component {
               "selectedColor": "#F3735D",
               "autoZoom": true
             }
-          }} /> }
+          }} />
+         }
+         {notAddressCompaniesList}
       </div>
     );
   }
