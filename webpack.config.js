@@ -19,7 +19,8 @@ module.exports = {
     historyApiFallback: true,
     contentBase: [
       path.join(__dirname, '/src/assets'),
-      path.join(__dirname, '/src/components')
+      path.join(__dirname, '/src/components'),
+      path.join(__dirname, '/node_modules')
     ]
   },
   plugins: [
