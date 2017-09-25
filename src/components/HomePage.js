@@ -1,18 +1,10 @@
 import React from 'react';
-import '../assets/stylesheets/components/HomePage.scss';
+import '../assets/stylesheets/components/MapPresentation.scss';
 import MapPresentation from './MapPresentation';
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  componentDidMount() {
-
-  }
-
-  componentWillUnmount() {
-
   }
 
   render() {
