@@ -10,9 +10,10 @@
 }
 
 .pulse {
-  width: 20px;
-  height: 20px;
-  background-size: 20px;
+  width: 32px;
+  height: 32px;
+  background-size: 32px;
+  border: solid 0.5px #e8e8e8;
   background-color: #716f42;
   z-index: 10;
   position: absolute;
