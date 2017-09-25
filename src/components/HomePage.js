@@ -91,13 +91,17 @@ class HomePage extends React.Component {
 
     images = companies.map(company => {
       if (company && company.geo !== undefined && company.geo !== null) {
-        return {
-          "zoomLevel": 5,
-          "scale": 0.5,
-          "title": company.geo.city,
-          "latitude": company.geo.lat,
-          "longitude": company.geo.lng
-        }
+        if (company.geo.city !== null &&
+          company.geo.lat !== null &&
+          company.geo.lng !== null) {
+          return {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": company.geo.city,
+            "latitude": company.geo.lat,
+            "longitude": company.geo.lng
+          }
+        }              
       }
       return {};
     });
