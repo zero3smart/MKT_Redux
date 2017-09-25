@@ -106,19 +106,17 @@ class HomePage extends React.Component {
       return {};
     });
 
-    console.log(notAddressCompanies);
+    let ntCompanies = notAddressCompanies.map(c => c.name);
 
     const notAddressCompaniesList = (
       <div>
-        {notAddressCompanies.map(comapny => (
-          <p>{company.name}</p>
-        ))}
+        <p>These companies do not have an address available:</p>
+        { ntCompanies.join() }
       </div>
     );
 
-    return (
-      <div className="">
-        {this.state.loading ? loading :
+    const mapViz = (
+      <div>
         <AmCharts.React
           className="map-marker"
           ref="ammap"
@@ -169,9 +167,14 @@ class HomePage extends React.Component {
               "selectedColor": "#F3735D",
               "autoZoom": true
             }
-          }} />
-         }
-         {notAddressCompaniesList}
+        }} />
+        {notAddressCompaniesList}
+      </div>
+    );
+
+    return (
+      <div className="">
+        {this.state.loading ? loading : mapViz}
       </div>
     );
   }
