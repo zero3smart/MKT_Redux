@@ -62,14 +62,10 @@ class HomePage extends React.Component {
       holder.className += ' map-clickable';
     }
 
-    // create dot
-    var dot = document.createElement( 'div' );
-    dot.className = 'dot';
-    holder.appendChild( dot );
-
     // create pulse
     var pulse = document.createElement( 'div' );
     pulse.className = 'pulse';
+    pulse.style.backgroundImage = "url(" + image.imageSrc + ")";
     holder.appendChild( pulse );
 
     // append the marker to the map container
@@ -99,9 +95,10 @@ class HomePage extends React.Component {
             "scale": 0.5,
             "title": company.geo.city,
             "latitude": company.geo.lat,
-            "longitude": company.geo.lng
+            "longitude": company.geo.lng,
+            "imageSrc": company.imageSrc
           }
-        }              
+        }
       }
       return {};
     });
