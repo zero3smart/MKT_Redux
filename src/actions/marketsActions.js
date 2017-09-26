@@ -68,7 +68,6 @@ export function fetchStates() {
         console.log(`There was a problem: ${res.status}`);
         return;
       }
-      console.log(res.data.companies);
       dispatch(setStates(res.data.usStates));
       dispatch(setCompanies(res.data.companies));
     }, err => {
