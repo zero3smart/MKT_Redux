@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/stylesheets/components/MapPresentation.scss';
+import '../assets/stylesheets/components/HomePage.scss';
 import MapPresentation from './MapPresentation';
 
 class HomePage extends React.Component {
@@ -9,7 +9,7 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <div className="">
+      <div className={'main-container'}>
         <MapPresentation />
       </div>
     );
